@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/fac5daed7c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="mainContainer">
+      <header class="head">
+        <nav class="head-nav">
+          <div class="logo">
+            <p class="logoText">NextBook</p>
+          </div>
+          <div>
+            <ul class="nav-items">
+              <li><a href="/">Home</a></li>
+              <li>
+                All Categories <i class="fa-solid fa-angle-down"></i>
+                <div class="sub-menu">
+                  <ul>
+                    <li>Novel</li>
+                    <li>Fiction</li>
+                    <li>Self help</li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="/addNew.html">Add new</a></li>
+              <li><a href="/howItWorks.html">How it works</a></li>
+
+              <button class="btn">Log in</button>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-----------Add a review-------->
+      <section class="main formContainer">
+        <div class="formContainer">
+          <form action="#" method="post" class="form">
+            <label for="picture">Select Picture: </label><br />
+            <input type="file" name="picture" id="picture" /><br /><br />
+            <input type="submit" value="Upload" />
+
+            <label for="pages">No. Pages: </label>
+            <input type="text" name="pages" id="pages" />
+
+            <label for="pages">Your review: </label>
+            <textarea name="review" id="review" cols="30" rows="10"></textarea>
+
+            <label for="ratings">Rate: </label>
+            <p>
+              <i class="fa fa-star checked" aria-hidden="true"></i>
+              <i class="fa fa-star checked" aria-hidden="true"></i>
+              <i class="fa fa-star checked" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!----- Footer ------->
+      <footer>
+        <div class="footer">
+          <p class="copyright">Copyright...</p>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
