@@ -23,7 +23,7 @@ git clone https://github.com/elhamatokhi/NextBook4.git
 3. To access cloned directory run:
 
 ```bash
-cd MNextBook4
+cd NextBook
 ```
 
 3. Open it with the live server
