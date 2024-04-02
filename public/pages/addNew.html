@@ -33,8 +33,8 @@
                   </ul>
                 </div>
               </li>
-              <li><a href="addNew.html">Add new</a></li>
-              <li><a href="howItWorks.html">How it works</a></li>
+              <li><a href="/pages/books/addNew.ejs">Add new</a></li>
+              <li><a href="/pages/books/howItWorks">How it works</a></li>
 
               <button class="btn">Log in</button>
             </ul>
@@ -44,25 +44,25 @@
       <!-----------Add a review-------->
       <section class="main formContainer">
         <div class="formContainer">
-          <form action="#" method="post" class="form">
+          <form action="/addNew" method="POST" class="form">
             <label for="picture">Select Picture: </label><br />
             <input type="file" name="picture" id="picture" /><br /><br />
-            <input type="submit" value="Upload" />
-
             <label for="pages">No. Pages: </label>
             <input type="text" name="pages" id="pages" />
-
+            <label for="author">Author</label>
+            <input type="text" name="author" id="" />
             <label for="pages">Your review: </label>
             <textarea name="review" id="review" cols="30" rows="10"></textarea>
+            <input type="submit" value="Upload" />
 
-            <label for="ratings">Rate: </label>
+            <!-- <label for="ratings">Rate: </label>
             <p>
               <i class="fa fa-star checked" aria-hidden="true"></i>
               <i class="fa fa-star checked" aria-hidden="true"></i>
               <i class="fa fa-star checked" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
-            </p>
+           </p> -->
           </form>
         </div>
       </section>
