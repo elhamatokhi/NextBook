@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -80,7 +82,7 @@ h1 {
   border-bottom: none;
 }
 
-.fa-bars {
+.hidden {
   display: none;
 }
 /* -----------------------------Suggested Books---------------------- */
