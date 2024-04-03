@@ -48,11 +48,11 @@ app.get("/books/addNew", (req, res) => {
   res.render("books/addNew");
 });
 
-app.get("/books/:genre", (req, res) => {
-  const requestedgenre = req.params.genre;
-  res.send(`You searched for: ${requestedgenre} 
-  `);
-});
+// app.get("/books/:genre", (req, res) => {
+//   const requestedgenre = req.params.genre;
+//   res.send(`You searched for: ${requestedgenre}
+//   `);
+// });
 
 app.post("/books", async (req, res) => {
   try {
