@@ -26,7 +26,7 @@ git clone https://github.com/elhamatokhi/NextBook4.git
 cd NextBook
 ```
 
-3. Open it with the live server
+3. Go to http://localhost:3000 or your localhost
 
 ## Authors
 
