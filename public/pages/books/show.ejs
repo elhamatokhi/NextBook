@@ -1,0 +1,25 @@
+<html lang="en">
+  <%- include('../includes/head',{title: 'Books | NextBook'})%>
+  <body>
+    <section class="mainContainer">
+      <%- include('../includes/header')%>
+      <!-----------Suggested Books-------->
+
+      <section class="main">
+        <div class="type-container">
+          <div class="container">
+            <span class="pages">Pages: <%= book.pages%></span>
+            <p class="tags">Review: <%= book.review%></p>
+          </div>
+          <span class="type">type</span>
+        </div>
+      </section>
+      <!----- Footer ------->
+      <footer>
+        <div class="footer">
+          <p class="copyright">Copyright...</p>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
