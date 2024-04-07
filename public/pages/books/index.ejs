@@ -2,69 +2,27 @@
   <%- include('../includes/head',{title: 'Books | NextBook'})%>
   <body>
     <section class="mainContainer">
-      <header class="head">
-        <nav class="head-nav">
-          <div class="logo">
-            <p class="logoText">NextBook</p>
-          </div>
-          <div class="bar">
-            <i class="fa-solid fa-bars hidden"></i>
-            <ul class="nav-items">
-              <li><a href="/">Home</a></li>
-              <li>
-                All Categories <i class="fa-solid fa-angle-down"></i>
-                <div class="sub-menu">
-                  <ul>
-                    <li>Novel</li>
-                    <li>Fiction</li>
-                    <li>Self help</li>
-                  </ul>
-                </div>
-              </li>
-              <li><a href="./books/addNew">Add new</a></li>
-              <li>
-                <a href="addNew">How it works</a>
-              </li>
-
-              <button class="btn">Log in</button>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <%- include('../includes/header')%>
       <!-----------Suggested Books-------->
 
       <section class="main">
         <div class="type-container">
+          <% books.forEach(book =>{ %>
           <div class="container">
-            <img src="/Images/atomichabits.jpg" alt="Book Name" class="image" />
-            <span class="pages">Name: <%=books[0].name%></span>
-            <span class="pages">Pages: <%=books[0].pages%></span>
-            <span class="tags">Genre: <%= books[0].genre%></span>
-            <p class="review">Review: <%= books[0].review%></p>
-            <span class="ratings">ratings: <%=books[0].rating%></span>
+            <% if(book.isInStock){%>
+            <span class="pages">Pages: <%= book.pages%></span>
+            <!-- <span class="tags">Tags: <%= book.tags%></span> -->
+            <p class="review">Review: <%= book.review %></p>
+            <p class="rating">Ratings: <%= book.rating%></p>
+            <% } else { %><%= book.name %> [Isn't reviewed] <% } %>
           </div>
-        </div>
-
-        <div class="type-container">
+          <% }) %>
           <div class="container">
-            <img src="/Images/atomichabits.jpg" alt="Book Name" class="image" />
-            <span class="pages">Name: <%=books[1].name%></span>
-            <span class="pages">Pages: <%=books[1].pages%></span>
-            <span class="tags">Genre: <%= books[1].genre%></span>
-            <p class="review">Review: <%= books[1].review%></p>
-            <span class="ratings">ratings: <%=books[1].rating%></span>
+            <span class="pages">Pages: <%= books.pages%></span>
+            <span class="tags">Tags: <%= books.tags%></span>
+            <p class="review"></p>
           </div>
-        </div>
-
-        <div class="type-container">
-          <div class="container">
-            <img src="/Images/atomichabits.jpg" alt="Book Name" class="image" />
-            <span class="pages">Name: <%=books[2].name%></span>
-            <span class="pages">Pages: <%=books[2].pages%></span>
-            <span class="tags">Genre: <%= books[2].genre%></span>
-            <p class="review">Review: <%= books[2].review%></p>
-            <span class="ratings">ratings: <%=books[2].rating%></span>
-          </div>
+          <span class="type">type</span>
         </div>
       </section>
       <!----- Footer ------->
