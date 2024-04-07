@@ -10,6 +10,7 @@
           <% books.forEach(book =>{ %>
           <div class="container">
             <% if(book.isInStock){%>
+            <span class="name">Name: <%= book.name%></span>
             <span class="pages">Pages: <%= book.pages%></span>
             <!-- <span class="tags">Tags: <%= book.tags%></span> -->
             <p class="review">Review: <%= book.review %></p>
@@ -17,12 +18,6 @@
             <% } else { %><%= book.name %> [Isn't reviewed] <% } %>
           </div>
           <% }) %>
-          <div class="container">
-            <span class="pages">Pages: <%= books.pages%></span>
-            <span class="tags">Tags: <%= books.tags%></span>
-            <p class="review"></p>
-          </div>
-          <span class="type">type</span>
         </div>
       </section>
       <!----- Footer ------->
