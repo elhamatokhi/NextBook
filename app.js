@@ -21,6 +21,7 @@ const bookSchema = new mongoose.Schema({
   review: { type: String, unique: true },
   genre: String,
   rating: { type: Number, required: true },
+  isInStock: { type: Boolean, default: true, required: true },
 });
 
 const Book = mongoose.model("Book", bookSchema);
@@ -35,7 +36,9 @@ app.get("/", (req, res) => {
 app.get("/books", async (req, res) => {
   try {
     const books = await Book.find({}).exec();
-    res.render("books/index", { books: books });
+    res.render("books/index", {
+      books: books,
+    });
   } catch (error) {
     console.error(error);
     res.render("books/index", {
@@ -43,16 +46,6 @@ app.get("/books", async (req, res) => {
     });
   }
 });
-
-app.get("/books/addNew", (req, res) => {
-  res.render("books/addNew");
-});
-
-// app.get("/books/:genre", (req, res) => {
-//   const requestedgenre = req.params.genre;
-//   res.send(`You searched for: ${requestedgenre}
-//   `);
-// });
 
 app.post("/books", async (req, res) => {
   try {
@@ -72,9 +65,24 @@ app.post("/books", async (req, res) => {
   }
 });
 
-app.get("/howItWorks", (req, res) => {
-  // res.sendFile("public/pages/books/howItWorks", { root: __dirname });
-  res.render("/pages/books/howItWorks");
+// app.get("/books/:genre", async (req, res) => {
+//   try {
+//     const requestedgenre = req.params.genre;
+//     const book = await Book.findOne({ genre: requestedgenre }).exec();
+//     if (!book) throw new Error("Book not found");
+//     res.render("books/show", { book: book });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(404).send("Sorry this book hasn't been reviewed");
+//   }
+// });
+
+app.get("/books/addNew", (req, res) => {
+  res.render("books/addNew");
+});
+
+app.get("/books/howItWorks", (req, res) => {
+  res.render("books/howItWorks");
 });
 
 app.listen(3000);
