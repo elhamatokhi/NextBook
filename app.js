@@ -32,6 +32,14 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/books/addNew", (req, res) => {
+  res.render("books/addNew");
+});
+
+app.get("/books/howItWorks", (req, res) => {
+  res.render("books/howItWorks");
+});
+
 app.get("/books", async (req, res) => {
   try {
     const books = await Book.find({}).exec();
@@ -66,22 +74,55 @@ app.post("/books", async (req, res) => {
 
 app.get("/books/:genre", async (req, res) => {
   try {
-    const requestedgenre = req.params.genre;
-    const book = await Book.findOne({ genre: requestedgenre }).exec();
-    if (!book) throw new Error("Book not found");
-    res.render("books/show", { book: book });
+    const genre = req.params.genre;
+    const book = await Book.findOne({ genre: genre }).exec();
+    if (!book) throw new Error("Book not find");
+    res.render("books/show", {
+      book: book,
+    });
   } catch (error) {
     console.error(error);
-    res.status(404).send("Sorry this book hasn't been reviewed");
+    res.status(404).send("Couln't find the book you're looking for.");
   }
 });
 
-app.get("/books/addNew", (req, res) => {
-  res.render("books/addNew");
+app.post("/books/:genre", async (req, res) => {
+  try {
+    const book = await Book.findOneAndUpdate(
+      { genre: req.params.genre },
+      req.body,
+      { new: true }
+    );
+
+    res.redirect(`/books/${book.genre}`);
+  } catch (error) {
+    console.error(error);
+    res.send("Error: The book could not be update.");
+  }
 });
 
-app.get("/books/howItWorks", (req, res) => {
-  res.render("books/howItWorks");
+app.get("/books/:genre/edit", async (req, res) => {
+  try {
+    const genre = req.params.genre;
+    const book = await Book.findOne({ genre: genre }).exec();
+    if (!book) throw new Error("book not found");
+    res.render("books/edit", {
+      book: book,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(404).send("Could not find the book you're looking for.");
+  }
+});
+
+app.get("/books/:genre/delete", async (req, res) => {
+  try {
+    await Book.findOneAndDelete({ genre: req.params.genre });
+    res.redirect("/books");
+  } catch (error) {
+    console.error(error);
+    res.send("Error: No book was deleted.");
+  }
 });
 
 app.listen(3000);
