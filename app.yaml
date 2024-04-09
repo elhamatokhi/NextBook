@@ -1,0 +1,4 @@
+runtime: nodejs20
+instance_class: F1
+env_variables:
+  MONGODB_URI: "mongodb+srv://elhamatokhi:T82zS55TyXQmwbfC@cluster0.gbw1vvr.mongodb.net/NextBook?retryWrites=true&w=majority"

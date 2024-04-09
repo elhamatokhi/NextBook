@@ -1,6 +1,6 @@
 import "dotenv/config";
-const express = require("express");
-const mongoose = require("mongoose");
+import express from "express";
+import mongoose from "mongoose";
 const app = express();
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -125,4 +125,4 @@ app.get("/books/:genre/delete", async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(process.env.PORT);
