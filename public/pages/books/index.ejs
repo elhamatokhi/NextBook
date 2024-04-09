@@ -6,19 +6,20 @@
       <!-----------Suggested Books-------->
 
       <section class="main">
-        <div class="type-container">
-          <% books.forEach(book =>{ %>
-          <div class="container">
-            <% if(book.isInStock){%>
-            <span class="name">Name: <%= book.name%></span>
-            <span class="pages">Pages: <%= book.pages%></span>
-            <!-- <span class="tags">Tags: <%= book.tags%></span> -->
-            <p class="review">Review: <%= book.review %></p>
-            <p class="rating">Ratings: <%= book.rating%></p>
-            <% } else { %><%= book.name %> [Isn't reviewed] <% } %>
-          </div>
-          <% }) %>
+        <% books.forEach(book =>{ %>
+        <div class="container">
+          <% if(book.isInStock){%>
+          <span class="pages">Name: <%= book.name%></span>
+          <span class="pages">Author: <%= book.author%></span>
+
+          <span class="pages">Pages: <%= book.pages%></span>
+          <!-- <span class="tags">Tags: <%= book.tags%></span> -->
+          <p class="review">Review: <%= book.review %></p>
+          <p class="review">Genre: <%= book.genre %></p>
+          <p class="rating">Ratings: <%= book.rating%></p>
+          <% } else { %><%= book.name %> [Isn't reviewed] <% } %>
         </div>
+        <% }) %>
       </section>
       <!----- Footer ------->
       <footer>

@@ -29,7 +29,6 @@ const Book = mongoose.model("Book", bookSchema);
 
 // Routes Begin
 app.get("/", (req, res) => {
-  // Render the "index" view
   res.render("index");
 });
 
@@ -65,17 +64,17 @@ app.post("/books", async (req, res) => {
   }
 });
 
-// app.get("/books/:genre", async (req, res) => {
-//   try {
-//     const requestedgenre = req.params.genre;
-//     const book = await Book.findOne({ genre: requestedgenre }).exec();
-//     if (!book) throw new Error("Book not found");
-//     res.render("books/show", { book: book });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(404).send("Sorry this book hasn't been reviewed");
-//   }
-// });
+app.get("/books/:genre", async (req, res) => {
+  try {
+    const requestedgenre = req.params.genre;
+    const book = await Book.findOne({ genre: requestedgenre }).exec();
+    if (!book) throw new Error("Book not found");
+    res.render("books/show", { book: book });
+  } catch (error) {
+    console.error(error);
+    res.status(404).send("Sorry this book hasn't been reviewed");
+  }
+});
 
 app.get("/books/addNew", (req, res) => {
   res.render("books/addNew");
