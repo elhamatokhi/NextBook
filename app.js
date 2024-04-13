@@ -1,11 +1,8 @@
 import { PORT } from "./config/app.js";
+import "./config/database.js";
 import express from "express";
-import mongoose from "mongoose";
+
 const app = express();
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log("Database Connected"))
-  .catch((error) => console.error(error));
 
 app.set("view engine", "ejs");
 app.set("views", "public/pages");
