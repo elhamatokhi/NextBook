@@ -1,4 +1,4 @@
-import "dotenv/config";
+import { PORT } from "./config/app.js";
 import express from "express";
 import mongoose from "mongoose";
 const app = express();
@@ -125,4 +125,4 @@ app.get("/books/:genre/delete", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT);
+app.listen(PORT);
