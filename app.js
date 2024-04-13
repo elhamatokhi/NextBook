@@ -1,5 +1,7 @@
 import { PORT } from "./config/app.js";
 import "./config/database.js";
+import { Book } from "./models/book.js";
+
 import express from "express";
 
 const app = express();
@@ -9,20 +11,6 @@ app.set("views", "public/pages");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-
-//Database
-const bookSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  author: { type: String, required: true },
-  pages: Number,
-  review: { type: String, unique: true },
-  genre: String,
-  rating: { type: Number, required: true },
-  isInStock: { type: Boolean, default: true, required: true },
-});
-
-const Book = mongoose.model("Book", bookSchema);
-//DataBasess - END
 
 // Routes Begin
 app.get("/", (req, res) => {
