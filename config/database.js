@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import { MONOGO_URI } from "./app";
+import { MONGODB_URI } from "./app.js";
 
 mongoose
-  .connect(MONOGO_URI)
+  .connect(MONGODB_URI)
   .then(() => console.log("Database connected ✔️"))
   .catch((error) => console.error(error));
 
