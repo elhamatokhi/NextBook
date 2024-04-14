@@ -246,12 +246,30 @@ a {
     padding-right: 1rem;
     display: block;
   }
+  .gallery__grid {
+    grid-template-columns: 6fr 6fr; /* 2-column grid */
+  }
+  .book {
+    margin-bottom: 2rem;
+  }
+  .section {
+    margin: 0 1rem;
+  }
+
+  .books-grid {
+    display: block;
+  }
 }
 
-/* for tablets */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
   .main {
     align-items: center;
     justify-content: center;
+  }
+  .books-grid figure {
+    margin-bottom: 3.157rem;
+  }
+  .book {
+    margin-bottom: 2rem;
   }
 }
