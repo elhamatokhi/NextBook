@@ -2,59 +2,93 @@
 <html lang="en">
   <%- include('../includes/head',{title: "Edit Book | NextBook"})%>
   <body>
-    <%- include('../includes/header')%>
+    <header class="head">
+      <nav class="head-nav">
+        <div class="logo">
+          <p class="logoText">NextBook</p>
+        </div>
+        <div>
+          <ul class="nav-items">
+            <li><a href="/">Home</a></li>
+            <li>
+              All Categories <i class="fa-solid fa-angle-down"></i>
+              <div class="sub-menu">
+                <ul>
+                  <li>Novel</li>
+                  <li>Fiction</li>
+                  <li>Self help</li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="addNew">Add new</a></li>
+            <li>
+              <a href="/books">All books</a>
+            </li>
+            <li><a href="howItWorks">How it works</a></li>
 
-    <main>
-      <h2>Edit a Book</h2>
-      <form action="/books/<%= book.genre %>" method="post">
-        <label for="name">Name: </label>
-        <input
-          type="text"
-          value="<%= book.name%>"
-          name="name"
-          placeholder="Name"
-        /><br />
-        <label for="author">Author:</label>
-        <input
-          type="text"
-          value="<%= book.author%>"
-          name="author"
-          placeholder="Author"
-        /><br />
-        <label for="pages">No. Pages: </label>
-        <input
-          type="text"
-          value="<%= book.pages%>"
-          name="pages"
-          placeholder="Pages"
-        /><br />
-        <label for="review">Review:</label>
-        <textarea
-          name="review"
-          value="<%= book.review%>"
-          id=""
-          placeholder="Your review"
-          cols="30"
-          rows="10"
-        ></textarea>
-        <br />
-        <label for="genre">Genre:</label>
-        <input
-          type="text"
-          value="<%= book.genre%>"
-          name="genre"
-          placeholder="Genre"
-        /><br />
-        <label for="rating">Rating: </label>
-        <input
-          type="text"
-          value="<%= book.rating%>"
-          name="rating"
-          placeholder="Rating"
-        /><br />
+            <button class="btn">Log in</button>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-        <button>Save</button>
-      </form>
+    <main class="editForm">
+      <div class="form">
+        <form action="/books/<%= book.genre %>" method="post">
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            value="<%= book.name%>"
+            name="name"
+            placeholder="Name"
+          /><br />
+          <label for="author">Author:</label>
+          <input
+            type="text"
+            value="<%= book.author%>"
+            name="author"
+            placeholder="Author"
+          /><br />
+          <label for="pages">No. Pages: </label>
+          <input
+            type="text"
+            value="<%= book.pages%>"
+            name="pages"
+            placeholder="Pages"
+          /><br />
+          <label for="review">Review:</label>
+          <textarea
+            name="review"
+            value="<%= book.review%>"
+            id=""
+            placeholder="Your review"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <br />
+          <label for="genre">Genre:</label>
+          <input
+            type="text"
+            value="<%= book.genre%>"
+            name="genre"
+            placeholder="Genre"
+          /><br />
+          <label for="rating">Rating: </label>
+          <input
+            type="text"
+            value="<%= book.rating%>"
+            name="rating"
+            placeholder="Rating"
+          /><br />
+          <button class="btn">Save</button>
+        </form>
+      </div>
+      <!----- Footer ------->
     </main>
+    <footer>
+      <div class="footer">
+        <p class="copyright">Copyright...</p>
+      </div>
+    </footer>
   </body>
 </html>

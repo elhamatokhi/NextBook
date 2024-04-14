@@ -5,18 +5,25 @@
       <%- include('../includes/header')%>
       <!-----------Suggested Books-------->
 
-      <section class="main">
+      <section class="main books-grid">
         <% books.forEach(book =>{ %>
-        <div class="container">
+        <div class="book">
           <% if(book.isInStock){%>
-          <span class="pages">Name: <%= book.name%></span>
-          <span class="pages">Author: <%= book.author%></span>
+          <span class="pages">Name: <%= book.name%></span><br />
+          <span class="pages">Author: <%= book.author%></span><br />
 
-          <span class="pages">Pages: <%= book.pages%></span>
-          <!-- <span class="tags">Tags: <%= book.tags%></span> -->
-          <p class="review">Review: <%= book.review %></p>
-          <p class="review">Genre: <%= book.genre %></p>
-          <p class="rating">Ratings: <%= book.rating%></p>
+          <span class="pages">Pages: <%= book.pages%></span><br />
+          <span class="review">Review: <%= book.review %></span><br />
+          <span class="review">Genre: <%= book.genre %></span><br />
+          <span class="rating">Ratings: <%= book.rating%></span><br />
+          <div class="btns">
+            <button class="btn" type="submit">
+              <a href="books/<%= book.genre %>/edit">Edit</a>
+            </button>
+            <button class="btn" type="submit">
+              <a href="books/<%= book.genre %>/delete">Delete</a>
+            </button>
+          </div>
           <% } else { %><%= book.name %> [Isn't reviewed] <% } %>
         </div>
         <% }) %>

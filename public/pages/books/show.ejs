@@ -1,19 +1,49 @@
 <html lang="en">
   <%- include('../includes/head',{title: 'Books | NextBook'})%>
   <body>
-    <%- include('../includes/header')%>
-    <!-----------Suggested Books-------->
+    <section class="mainContainer">
+      <header class="head">
+        <nav class="head-nav">
+          <div class="logo">
+            <p class="logoText">NextBook</p>
+          </div>
+          <div>
+            <ul class="nav-items">
+              <li><a href="/">Home</a></li>
+              <li>
+                All Categories <i class="fa-solid fa-angle-down"></i>
+                <div class="sub-menu">
+                  <ul>
+                    <li>Novel</li>
+                    <li>Fiction</li>
+                    <li>Self help</li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="addNew">Add new</a></li>
+              <li>
+                <a href="/books">All books</a>
+              </li>
+              <li><a href="howItWorks">How it works</a></li>
 
-    <section class="main">
-      <main>
-        <span class="pages">Name: <%= book.name%></span>
-        <span class="pages">Author: <%= book.author%></span>
-        <span class="pages">Pages: <%= book.pages%></span>
-        <p class="review">Review: <%= book.review %></p>
-        <p class="review">Genre: <%= book.genre %></p>
-        <p class="rating">Ratings: <%= book.rating%></p>
-      </main>
-      <!----- Footer ------->
+              <button class="btn">Log in</button>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-----------Suggested Books-------->
+
+      <section class="main updatedBook">
+        <main>
+          <span class="pages">Name: <%= book.name%></span>
+          <span class="pages">Author: <%= book.author%></span>
+          <span class="pages">Pages: <%= book.pages%></span>
+          <p class="review">Review: <%= book.review %></p>
+          <p class="review">Genre: <%= book.genre %></p>
+          <p class="rating">Ratings: <%= book.rating%></p>
+        </main>
+        <!----- Footer ------->
+      </section>
       <footer>
         <div class="footer">
           <p class="copyright">Copyright...</p>

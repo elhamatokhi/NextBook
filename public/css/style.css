@@ -99,11 +99,14 @@ h1 {
 }
 
 /* -----------------------------Suggested Books---------------------- */
+.mainText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main {
   display: flex;
   min-height: 80vh;
-  justify-content: center;
-  align-items: center;
 }
 .type-container {
   display: flex;
@@ -126,9 +129,77 @@ h1 {
 }
 
 /* -----------------Add New ----------- */
-.checked {
-  color: gold;
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.editForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  padding: 4rem;
+  background-color: rgba(28, 25, 25, 0.1);
+  border-radius: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+}
+input,
+textarea {
+  border: none;
+  padding: 0.4rem 4rem;
+  border-radius: 0.5rem;
+}
+label {
+  font-size: 1.5em;
+}
+.btn {
+  background-color: rgba(28, 25, 25, 0.3);
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  padding: 0.5rem 3rem;
+  font-size: 1.6rem;
+}
+/* -----All Books--------- */
+
+.books-grid {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-column-gap: 1.777rem;
+  grid-row-gap: 3.157rem;
+  align-items: start;
+}
+.book,
+.updatedBook {
+  background-color: rgba(28, 25, 25, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+}
+.updatedBook {
+  align-items: center;
+  justify-content: center;
+  line-height: 3rem;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+}
+
 /* -----------------Footer--------------- */
 .footer {
   display: flex;
@@ -143,17 +214,6 @@ h1 {
 .copyright {
   font-size: 1.2rem;
   padding-left: 1rem;
-}
-
-/* ------Add new---------- */
-.formContainer {
-  align-self: center;
-  justify-self: center;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* ------Animations--------- */
