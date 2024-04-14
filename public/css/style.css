@@ -28,6 +28,14 @@ h1 {
   height: 2px;
   color: #000;
   background-color: #000;
+  font-size: 1.8rem;
+}
+
+.logo {
+  animation: logoSlidesInFromLeft 1s ease-out;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
 }
 .head-nav {
   display: flex;
@@ -146,6 +154,19 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* ------Animations--------- */
+
+@keyframes logoSlidesInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 /*------------mobile Version------------ */
 @media screen and (max-width: 768px) {
