@@ -60,7 +60,6 @@ router.post("/books/:genre", async (req, res) => {
       req.body,
       { new: true }
     );
-
     res.redirect(`/books/${book.genre}`);
   } catch (error) {
     console.error(error);
