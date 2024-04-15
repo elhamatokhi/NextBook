@@ -3,16 +3,19 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon ./app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=5000"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.18.3",
+    "jest": "^29.7.0",
     "lodash": "^4.17.21",
-    "mongoose": "^8.2.4"
+    "mongoose": "^8.2.4",
+    "supertest": "^6.3.4"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "typescript": "^5.4.4"
   }
 }
