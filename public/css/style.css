@@ -23,13 +23,6 @@ h1 {
   width: 95%;
   margin: 0 auto;
 }
-.line {
-  width: 4px;
-  height: 2px;
-  color: #000;
-  background-color: #000;
-  font-size: 1.8rem;
-}
 
 .logo {
   animation: logoSlidesInFromLeft 1s ease-out;
@@ -59,45 +52,23 @@ h1 {
   gap: 3rem;
   padding: 0;
   cursor: pointer;
+  align-items: center;
 }
 
 .nav-items li a {
   text-decoration: none;
   color: black;
 }
-.sub-menu {
-  display: none;
-}
-.sub-menu ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  padding: 0;
-}
-
-.head-nav ul li:hover .sub-menu {
-  display: block;
-  position: absolute;
-  color: black;
-  cursor: pointer;
-  background: rgba(204, 204, 204, 0.7);
-}
-
-.head-nav ul li:hover .sub-menu ul li {
-  width: 9.3rem;
-  padding: 1.2rem;
-  cursor: pointer;
-  border-bottom: 1px dotted #000;
-}
-.head-nav ul li:hover .sub-menu ul li:last-child {
-  border-bottom: none;
-}
 
 .hidden {
   display: none;
 }
 
+nav #icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
 /* -----------------------------Suggested Books---------------------- */
 .mainText {
   display: flex;
@@ -235,9 +206,6 @@ a {
 }
 /*------------mobile Version------------ */
 @media screen and (max-width: 768px) {
-  .nav-items {
-    display: none;
-  }
   .bar {
     display: flex;
     align-items: center;
@@ -259,6 +227,22 @@ a {
 
   .books-grid {
     display: block;
+  }
+
+  .head {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2rem);
+    mix-blend-mode: multiply;
+    z-index: 777;
+    display: none;
+  }
+  .nav-items {
+    flex-direction: column;
   }
 }
 

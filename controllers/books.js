@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { Book } from "../models/book.js";
-
+import { body, validationResult } from "express-validator";
 const router = Router();
 
 router.get("/books", async (req, res) => {
@@ -17,24 +17,29 @@ router.get("/books", async (req, res) => {
   }
 });
 
-router.post("/books", async (req, res) => {
-  try {
-    const book = new Book({
-      name: req.body.name,
-      author: req.body.author,
-      pages: req.body.pages,
-      review: req.body.review,
-      genre: req.body.genre,
-      rating: req.body.rating,
-    });
-    await book.save();
-
-    res.redirect(`books/addNew`);
-  } catch (error) {
-    console.error(error);
-    res.send("Error: The book could not be added.");
+router.post(
+  "/books",
+  body("name").isString().trim().isLength({ max: 256 }).escape(),
+  body("genre").isString().isLength({ max: 256 }).isSlug().escape(),
+  async (req, res) => {
+    try {
+      validationResult(req).throw();
+      const book = new Book({
+        name: req.body.name,
+        author: req.body.author,
+        pages: req.body.pages,
+        review: req.body.review,
+        genre: req.body.genre,
+        rating: req.body.rating,
+      });
+      await book.save();
+      res.redirect(`books/addNew`);
+    } catch (error) {
+      console.error(error);
+      res.send("Error: The book could not be added.");
+    }
   }
-});
+);
 
 router.get("/books/addNew", (req, res) => {
   res.render("books/addNew");
