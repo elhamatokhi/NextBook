@@ -2,7 +2,20 @@
   <%- include('../includes/head',{title: 'Books | NextBook'})%>
   <body>
     <section class="mainContainer">
-      <%- include('../includes/header')%>
+      <header class="head">
+        <nav class="head-nav">
+          <div class="logo">
+            <p class="logoText">NextBook</p>
+          </div>
+          <ul class="nav-items">
+            <li><a href="/">Home</a></li>
+            <li><a href="./books/addNew">Add new</a></li>
+            <li><a href="./books">All books</a></li>
+            <li><a href="./books/howItWorks">How it works</a></li>
+            <div id="icon"><i class="fa-solid fa-bars"></i></div>
+          </ul>
+        </nav>
+      </header>
       <!-----------Suggested Books-------->
 
       <section class="main books-grid">
