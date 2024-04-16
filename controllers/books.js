@@ -28,7 +28,8 @@ router.post("/books", async (req, res) => {
       rating: req.body.rating,
     });
     await book.save();
-    res.send("Book Added");
+
+    res.redirect(`books/addNew`);
   } catch (error) {
     console.error(error);
     res.send("Error: The book could not be added.");
